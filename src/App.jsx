@@ -45,14 +45,15 @@ function App() {
 
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    console.log("initial loading state:", loading);
     //Simulate a loading delay (e.g., fetching data)
-    const timer = setTimeout(() => {
-      setLoading(false);
-      console.log("loading state after timeout:", loading);
-    }, 4000); //3 seconds
+    // const timer = setTimeout(() => {
+    //   setLoading(false);
+    // }, 4000); //3 seconds
 
-    return () => clearTimeout(timer);
+    // return () => clearTimeout(timer);
+    window.onload = () => {
+      setLoading(false);
+    };
   }, []);
 
   return (
