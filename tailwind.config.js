@@ -9,6 +9,7 @@ export default {
       fontFamily:{
         poppins:['poppins', 'sans-serif'],
         oleo:['Oleo Scripts', 'cursive'],
+        exo:['Exo', 'sans-serif'],
         custom: [''],
       },
     },
