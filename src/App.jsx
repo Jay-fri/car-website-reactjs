@@ -37,18 +37,20 @@ import FooterShape2 from "./assets/svg/footershape2.svg";
 import Preloader from "./components/Preloader";
 
 function App() {
+  // Hambuger menu codes
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
+  // Preloader code
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    //Simulate a loading delay (e.g., fetching data)
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 4000); //3 seconds
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, []);
