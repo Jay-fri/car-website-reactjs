@@ -28,6 +28,7 @@ import Featured3 from "./assets/svg/featured3.svg";
 import Featured4 from "./assets/svg/featured5.svg";
 import Featured5 from "./assets/svg/featured6.svg";
 import Subscribe from "./assets/svg/subscribe.svg";
+import Subscribesm from "./assets/svg/subscribesm.svg";
 import Facebook from "./assets/svg/facebook.svg";
 import Twitter from "./assets/svg/twitter.svg";
 import Instagram from "./assets/svg/instagram.svg";
@@ -44,13 +45,13 @@ function App() {
     setIsOpen(!isOpen);
   };
 
-  // Preloader code
+  // Preloader codes
 
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 4000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -63,9 +64,24 @@ function App() {
         <div>
           <nav className=" flex w-[100vw] bg-black h-[60px] items-center justify-between pt-[45px] pb-[45px] pl-[25px] pr-[25px]">
             <img src={Logo} className="w-[130px]" alt="Logo" />
-            <button className="z-30" onClick={toggleDropdown}>
+            <button className="z-30 md:hidden" onClick={toggleDropdown}>
               <img src={Menu} className="w-[35px] z-30" alt="Menu" />
             </button>
+
+            <ul className="hidden md:flex gap-[40px] lg:mr-[150px] z-50 h-[30px] md:mr-[100px]">
+              <li className="navlink hover:scale-110 w-fit flex flex-col gap-[2px] transition-all duration-300 cursor-pointer ">
+                Home <span className="navline"></span>
+              </li>
+              <li className="navlink hover:scale-110 w-fit flex flex-col gap-[2px] transition-all duration-300 cursor-pointer ">
+                About <span className="navline"></span>
+              </li>
+              <li className="navlink hover:scale-110 w-fit flex flex-col gap-[2px] transition-all duration-300 cursor-pointer ">
+                Popular <span className="navline2"></span>
+              </li>
+              <li className="navlink hover:scale-110 w-fit flex flex-col gap-[2px] transition-all duration-300 cursor-pointer ">
+                Featured <span className="navline2"></span>
+              </li>
+            </ul>
           </nav>
 
           <div
@@ -119,21 +135,18 @@ function App() {
             alt=""
           />
 
-          <div className="flex w-[100vw] justify-between p-[20px] mt-[30px]">
+          <div className="flex gap-[70px] ml-auto mr-auto w-fit items-center justify-between p-[20px] mt-[30px]">
             <div className="flex flex-col gap-[5px] items-center text-center justify-center z-50">
               <div>
                 <img src={Temperature} alt="temp icon" />
               </div>
               <div className="font-[300] text-[1.5rem]">24 &deg;</div>
-              <div
-                className="font-[400] text-[0.8rem] text-gray-400
-          "
-              >
+              <div className="font-[400] text-[0.8rem] text-gray-400">
                 TEMPERATURE
               </div>
             </div>
 
-            <div className="flex flex-col gap-[5px] items-center text-center z-50">
+            <div className=" flex flex-col gap-[5px] items-center text-center z-50">
               <div>
                 <img src={Milleage} alt="Milleage icon" />
               </div>
@@ -148,10 +161,7 @@ function App() {
                 <img src={Battery} alt="Battery icon" />
               </div>
               <div className="font-[300] text-[1.5rem]">94%</div>
-              <div
-                className="font-[400] text-[0.8rem] text-gray-400
-          "
-              >
+              <div className="font-[400] text-[0.8rem] text-gray-400">
                 BATTERY
               </div>
             </div>
@@ -161,36 +171,37 @@ function App() {
             <img src={Start} alt="start button" />
           </div>
 
-          <div className="w-fit ml-auto mr-auto relative flex align-middle justify-center items-center mt-[50px]">
-            <img src={About} alt="about" />
-            <div className="absolute bottom-[-20px] right-0 flex flex-col items-center text-center p-[10px] rounded-[10px] bg-white/10 backdrop-blur-md w-[220px]">
-              <p className="font-[500] text-[1.5rem]">2.500+</p>
-              <p className="font-[200] text-[0.9rem]">
-                Supercharges placed along popular routes
-              </p>
+          <div className="md:flex md:mb-[100px] lg:flex-row md:flex-col md:items-center md:just ">
+            <div className="w-fit ml-auto mr-auto relative flex align-middle justify-center items-center mt-[50px]">
+              <img className="md:w-[30vw] z-50" src={About} alt="about" />
+              <div className="z-[51] absolute bottom-[-20px] right-0 flex flex-col items-center text-center p-[10px] rounded-[10px] bg-white/10 backdrop-blur-md w-[220px]">
+                <p className="font-[500] text-[1.5rem]">2.500+</p>
+                <p className="font-[200] text-[0.9rem]">
+                  Supercharges placed along popular routes
+                </p>
+              </div>
             </div>
-          </div>
-
-          <div className="flex flex-col h-fit w-full gap-[30px] items-start mt-[70px] p-[30px]">
-            <p className="font-[500] text-[1.5rem]">
-              Machines With Future Technology
-            </p>
-            <p className="font-[200] text-[1.1rem]">
-              See the future with high-performance electric cars produced by
-              renowned brands. They feature futuristic builds and designs with
-              new and innovative platforms that last a long time.
-            </p>
-            <button className="bg-blue-500  p-[20px] text-[1.1rem] font-[300] rounded-[6px] transition-all hover:bg-opacity-50">
-              Know more
-            </button>
+            <div className="md:w-[55vw] flex flex-col h-fit w-full gap-[30px] items-start mt-[70px] p-[30px]">
+              <p className="font-[500] text-[1.5rem]">
+                Machines With Future Technology
+              </p>
+              <p className="font-[200] text-[1.1rem] md:text-[0.9rem] md:w-[500px]">
+                See the future with high-performance electric cars produced by
+                renowned brands. They feature futuristic builds and designs with
+                new and innovative platforms that last a long time.
+              </p>
+              <button className="bg-blue-500  p-[15px] text-[1.1rem] font-[300] rounded-[6px] transition-all hover:bg-opacity-50">
+                Know more
+              </button>
+            </div>
           </div>
           <Slider1 />
 
-          <div className="features">
-            <div className="w-full pt-[60px] flex items-center justify-center">
+          <div className="features md:mx-auto md:w-[60vw] md:h-[550px] md:rounded-[20px] md:mt-[100px]">
+            <div className="w-full md:pt-[50px] pt-[60px] flex items-center justify-center">
               <p className="font-[500] text-[1.8rem]">More Features</p>
             </div>
-            <div className="relative w-fit mt-[150px] mb-0 ml-auto mr-auto ">
+            <div className="relative w-fit md:mt-[90px] mt-[150px] mb-0 ml-auto mr-auto ">
               <img src={Carfeatures} alt="" />
               <div className="absolute flex flex-col gap-[5px] top-0 left-[-100px] pl-[40px] pr-[40px] pt-[20px] pb-[20px] w-[150px] h-[130px] text-center rounded-[30px] bg-white/20 backdrop-blur-md ">
                 <p className="font-[500] text-[1.5rem]">800v</p>
@@ -209,7 +220,7 @@ function App() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-[50px] items-center pt-[40px]">
+          <div className="flex flex-col gap-[50px] items-center mt-[40px] md:mt-[80px]">
             <p className="font-[500] text-[1.8rem]">Featured Luxury Cars</p>
             <div className="flex gap-[30px]">
               <div className="bg-white/10 w-fit p-[10px] rounded-[10px]">
@@ -223,139 +234,146 @@ function App() {
               </div>
             </div>
 
-            <div className="relative shrink-0 card h-[350px] w-[280px] rounded-[20px] p-[40px]">
-              <div className="flex flex-col gap-[0px]">
-                <p className="font-[500] text-[1.7rem] mb-0">Tesla</p>
-                <p className="mt-0 font-[300] text-[1.3rem] text-gray-400">
-                  Model X
-                </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[45px] ">
+              <div className="relative shrink-0 card h-[350px] w-[280px] rounded-[20px] p-[40px]">
+                <div className="flex flex-col gap-[0px]">
+                  <p className="font-[500] text-[1.7rem] mb-0">Tesla</p>
+                  <p className="mt-0 font-[300] text-[1.3rem] text-gray-400">
+                    Model X
+                  </p>
+                </div>
+                <img
+                  className="relative z-50 w-[280px] mt-[1.5rem]"
+                  src={Featured1}
+                  alt=""
+                />
+                <p className="mt-[40px] text-[1.5rem] font-[500]">$98,900</p>
+                <button className="absolute w-fit bottom-0 right-0 hover:scale-110 transition-all">
+                  <img className="w-[60px]" src={Shop} alt="" />
+                </button>
+                <img
+                  className=" absolute top-0 w-[100%] h-[100%] ml-[-40px]"
+                  src={Shape}
+                  alt=""
+                />
               </div>
-              <img
-                className="relative z-50 w-[280px] mt-[1.5rem]"
-                src={Featured1}
-                alt=""
-              />
-              <p className="mt-[40px] text-[1.5rem] font-[500]">$98,900</p>
-              <button className="absolute w-fit bottom-0 right-0 hover:scale-110 transition-all">
-                <img className="w-[60px]" src={Shop} alt="" />
-              </button>
-
-              <img
-                className=" absolute top-0 w-[100%] h-[100%] ml-[-40px]"
-                src={Shape}
-                alt=""
-              />
-            </div>
-            <div className="relative shrink-0 card h-[350px] w-[280px] rounded-[20px] p-[40px]">
-              <div className="flex flex-col gap-[0px]">
-                <p className="font-[500] text-[1.7rem] mb-0">Tesla</p>
-                <p className="mt-0 font-[300] text-[1.3rem] text-gray-400">
-                  Model 3
-                </p>
+              <div className="relative shrink-0 card h-[350px] w-[280px] rounded-[20px] p-[40px]">
+                <div className="flex flex-col gap-[0px]">
+                  <p className="font-[500] text-[1.7rem] mb-0">Tesla</p>
+                  <p className="mt-0 font-[300] text-[1.3rem] text-gray-400">
+                    Model 3
+                  </p>
+                </div>
+                <img
+                  className="relative z-50 w-[280px] mt-[1.5rem]"
+                  src={Featured2}
+                  alt=""
+                />
+                <p className="mt-[40px] text-[1.5rem] font-[500]">$45,900</p>
+                <button className="absolute w-fit bottom-0 right-0 hover:scale-110 transition-all">
+                  <img className="w-[60px]" src={Shop} alt="" />
+                </button>
+                <img
+                  className=" absolute top-0 w-[100%] h-[100%] ml-[-40px]"
+                  src={Shape}
+                  alt=""
+                />
               </div>
-              <img
-                className="relative z-50 w-[280px] mt-[1.5rem]"
-                src={Featured2}
-                alt=""
-              />
-              <p className="mt-[40px] text-[1.5rem] font-[500]">$45,900</p>
-              <button className="absolute w-fit bottom-0 right-0 hover:scale-110 transition-all">
-                <img className="w-[60px]" src={Shop} alt="" />
-              </button>
-
-              <img
-                className=" absolute top-0 w-[100%] h-[100%] ml-[-40px]"
-                src={Shape}
-                alt=""
-              />
-            </div>
-            <div className="relative shrink-0 card h-[350px] w-[280px] rounded-[20px] p-[40px]">
-              <div className="flex flex-col gap-[0px]">
-                <p className="font-[500] text-[1.7rem] mb-0">Audi</p>
-                <p className="mt-0 font-[300] text-[1.3rem] text-gray-400">
-                  E-tron
-                </p>
+              <div className="relative shrink-0 card h-[350px] w-[280px] rounded-[20px] p-[40px]">
+                <div className="flex flex-col gap-[0px]">
+                  <p className="font-[500] text-[1.7rem] mb-0">Audi</p>
+                  <p className="mt-0 font-[300] text-[1.3rem] text-gray-400">
+                    E-tron
+                  </p>
+                </div>
+                <img
+                  className="relative z-50 w-[280px] mt-[1.5rem]"
+                  src={Featured3}
+                  alt=""
+                />
+                <p className="mt-[40px] text-[1.5rem] font-[500]">$175,900</p>
+                <button className="absolute w-fit bottom-0 right-0 hover:scale-110 transition-all">
+                  <img className="w-[60px]" src={Shop} alt="" />
+                </button>
+                <img
+                  className=" absolute top-0 w-[100%] h-[100%] ml-[-40px]"
+                  src={Shape}
+                  alt=""
+                />
               </div>
-              <img
-                className="relative z-50 w-[280px] mt-[1.5rem]"
-                src={Featured3}
-                alt=""
-              />
-              <p className="mt-[40px] text-[1.5rem] font-[500]">$175,900</p>
-              <button className="absolute w-fit bottom-0 right-0 hover:scale-110 transition-all">
-                <img className="w-[60px]" src={Shop} alt="" />
-              </button>
-
-              <img
-                className=" absolute top-0 w-[100%] h-[100%] ml-[-40px]"
-                src={Shape}
-                alt=""
-              />
-            </div>
-            <div className="relative shrink-0 card h-[350px] w-[280px] rounded-[20px] p-[40px]">
-              <div className="flex flex-col gap-[0px]">
-                <p className="font-[500] text-[1.7rem] mb-0">Porsche</p>
-                <p className="mt-0 font-[300] text-[1.3rem] text-gray-400">
-                  Boxster 987
-                </p>
+              <div className="relative shrink-0 card h-[350px] w-[280px] rounded-[20px] p-[40px]">
+                <div className="flex flex-col gap-[0px]">
+                  <p className="font-[500] text-[1.7rem] mb-0">Porsche</p>
+                  <p className="mt-0 font-[300] text-[1.3rem] text-gray-400">
+                    Boxster 987
+                  </p>
+                </div>
+                <img
+                  className="relative z-50 w-[280px] mt-[1.5rem]"
+                  src={Featured4}
+                  alt=""
+                />
+                <p className="mt-[40px] text-[1.5rem] font-[500]">$126,900</p>
+                <button className="absolute w-fit bottom-0 right-0 hover:scale-110 transition-all">
+                  <img className="w-[60px]" src={Shop} alt="" />
+                </button>
+                <img
+                  className=" absolute top-0 w-[100%] h-[100%] ml-[-40px]"
+                  src={Shape}
+                  alt=""
+                />
               </div>
-              <img
-                className="relative z-50 w-[280px] mt-[1.5rem]"
-                src={Featured4}
-                alt=""
-              />
-              <p className="mt-[40px] text-[1.5rem] font-[500]">$126,900</p>
-              <button className="absolute w-fit bottom-0 right-0 hover:scale-110 transition-all">
-                <img className="w-[60px]" src={Shop} alt="" />
-              </button>
-
-              <img
-                className=" absolute top-0 w-[100%] h-[100%] ml-[-40px]"
-                src={Shape}
-                alt=""
-              />
-            </div>
-            <div className="relative shrink-0 card h-[350px] w-[280px] rounded-[20px] p-[40px]">
-              <div className="flex flex-col gap-[0px]">
-                <p className="font-[500] text-[1.7rem] mb-0">Porsche</p>
-                <p className="mt-0 font-[300] text-[1.3rem] text-gray-400">
-                  Panamera
-                </p>
+              <div className="relative shrink-0 card h-[350px] w-[280px] rounded-[20px] p-[40px]">
+                <div className="flex flex-col gap-[0px]">
+                  <p className="font-[500] text-[1.7rem] mb-0">Porsche</p>
+                  <p className="mt-0 font-[300] text-[1.3rem] text-gray-400">
+                    Panamera
+                  </p>
+                </div>
+                <img
+                  className="relative w-[280px] mt-[1.5rem] z-[100]"
+                  src={Featured5}
+                  alt=""
+                />
+                <p className="mt-[40px] text-[1.5rem] font-[500]">$126,900</p>
+                <button className="absolute w-fit bottom-0 right-0 hover:scale-110 transition-all">
+                  <img className="w-[60px]" src={Shop} alt="" />
+                </button>
+                <img
+                  className=" absolute top-0 w-[100%] h-[100%] ml-[-40px] z-0"
+                  src={Shape}
+                  alt=""
+                />
               </div>
-              <img
-                className="relative w-[280px] mt-[1.5rem] z-[100]"
-                src={Featured5}
-                alt=""
-              />
-              <p className="mt-[40px] text-[1.5rem] font-[500]">$126,900</p>
-              <button className="absolute w-fit bottom-0 right-0 hover:scale-110 transition-all">
-                <img className="w-[60px]" src={Shop} alt="" />
-              </button>
-
-              <img
-                className=" absolute top-0 w-[100%] h-[100%] ml-[-40px] z-0"
-                src={Shape}
-                alt=""
-              />
             </div>
           </div>
-          <div className="offer relative p-[30px]">
-            <div className="flex flex-col gap-[30px] w-full text-center items-center justify-center">
-              <p className="font-[500] text-[1.8rem] mt-[20px]">
+
+          <div className="offer md:flex md:h-[500px] md:mx-auto md:gap-[60px] md:items-center md:justify-center relative p-[30px]">
+            <div className="flex flex-col gap-[30px] w-full text-center md:text-start md:items-start md:w-fit items-center justify-center">
+              <p className="font-[500] text-[1.8rem] md:w-[300px] mt-[20px] md:text-[1.6rem]">
                 Do You Want To Receive Special Offers?
               </p>
-              <p className="font-[300] text-[1.2rem]">
+              <p className="font-[300] text-[1.2rem] md:w-[400px] md:text-[0.9rem]">
                 Be the first to receive all the information about our products
                 and new cars by email by subscribing to our mailing list.
               </p>
-              <button className="w-[180px] h-[60px] font-[300] text-[1.3rem] rounded-[10px] bg-blue-600 hover:bg-blue-700 transition-all">
+              <button className="w-[150px] h-[55px] font-[300] text-[1rem] rounded-[10px] bg-blue-600 hover:bg-blue-700 transition-all">
                 Subscribe Now
               </button>
             </div>
-            <img className="absolute bottom-8 right-0" src={Subscribe} alt="" />
+            <img
+              className="absolute bottom-8 md:hidden right-0"
+              src={Subscribe}
+              alt=""
+            />
+            <img
+              className="hidden md:block w-[450px]"
+              src={Subscribesm}
+              alt=""
+            />
           </div>
 
-          <div className="grid grid-cols-3 gap-[50px] items-center p-[40px] mt-[30px] mb-[30px]">
+          <div className="grid grid-cols-3 gap-[50px] md:grid-cols-6 md:w-full md:justify-center md:mx-auto md:p-[20px] md:pl-[8vw] items-center p-[40px] mt-[30px] mb-[30px]">
             <img className="w-[55px]" src={Logo1} alt="" />
             <img className="w-[55px]" src={Logo2} alt="" />
             <img className="w-[55px]" src={Logo3} alt="" />
@@ -364,34 +382,56 @@ function App() {
             <img className="w-[55px]" src={Logo6} alt="" />
           </div>
 
-          <div className="relative p-[30px] grid grid-cols-1 gap-[60px]">
+          <div className="w-full relative p-[30px] grid grid-cols-1 gap-[60px] md:grid-cols-4 md:pl-[9vw] md:mt-[80px] md:mx-auto md:justify-center ">
             <div className="flex flex-col gap-[30px]">
               <img className="w-[120px]" src={Logo} alt="" />
-              <p className="font-[300] text-[1.2rem] ">
+              <p className="font-[300] text-[1.2rem] md:text-[0.9rem] md:w-fit ">
                 We offer the best electric cars of the most recognized brands in
                 the world.
               </p>
             </div>
             <div className="flex flex-col gap-[30px]">
-              <p className="font-[500] text-[1.6rem]">Company</p>
+              <p className="font-[500] text-[1.6rem] md:text-[1.4rem]">
+                Company
+              </p>
               <div className="flex flex-col gap-[10px]">
-                <p className="font-[300] text-[1.15rem] ">About</p>
-                <p className="font-[300] text-[1.15rem] ">Cars</p>
-                <p className="font-[300] text-[1.15rem] ">History</p>
-                <p className="font-[300] text-[1.15rem] ">Shop</p>
+                <p className="font-[300] text-[1.15rem] md:text-[0.9rem] ">
+                  About
+                </p>
+                <p className="font-[300] text-[1.15rem] md:text-[0.9rem] ">
+                  Cars
+                </p>
+                <p className="font-[300] text-[1.15rem] md:text-[0.9rem] ">
+                  History
+                </p>
+                <p className="font-[300] text-[1.15rem] md:text-[0.9rem] ">
+                  Shop
+                </p>
               </div>
             </div>
             <div className="flex flex-col gap-[30px]">
-              <p className="font-[500] text-[1.6rem]">Information</p>
+              <p className="font-[500] text-[1.6rem] md:text-[1.4rem]">
+                Information
+              </p>
               <div className="flex flex-col gap-[10px]">
-                <p className="font-[300] text-[1.15rem] ">Request a quote</p>
-                <p className="font-[300] text-[1.15rem] ">Find a dealer</p>
-                <p className="font-[300] text-[1.15rem] ">Contact us</p>
-                <p className="font-[300] text-[1.15rem] ">Services</p>
+                <p className="font-[300] text-[1.15rem] md:text-[0.9rem] ">
+                  Request a quote
+                </p>
+                <p className="font-[300] text-[1.15rem] md:text-[0.9rem] ">
+                  Find a dealer
+                </p>
+                <p className="font-[300] text-[1.15rem] md:text-[0.9rem] ">
+                  Contact us
+                </p>
+                <p className="font-[300] text-[1.15rem] md:text-[0.9rem] ">
+                  Services
+                </p>
               </div>
             </div>
             <div className="flex flex-col gap-[20px]">
-              <p className="font-[500] text-[1.6rem]">Follow us</p>
+              <p className="font-[500] text-[1.6rem] md:text-[1.4rem]">
+                Follow us
+              </p>
               <div className="flex gap-[20px]">
                 <img className="w-[30px]" src={Facebook} alt="" />
                 <img className="w-[30px]" src={Instagram} alt="" />
@@ -399,17 +439,17 @@ function App() {
               </div>
             </div>
             <img
-              className="absolute top-0 left-0 w-full"
+              className="absolute top-0 left-0 w-full md:w-[25%]"
               src={FooterShape1}
               alt=""
             />
             <img
-              className="absolute bottom-[-135px] w-full right-0"
+              className="absolute bottom-[-135px] w-full right-0 md:bottom-[-240px]"
               src={FooterShape2}
               alt=""
             />
           </div>
-          <div className="flex gap-[5px] items-center justify-center mt-[70px] mb-[40px]">
+          <div className="flex gap-[5px] items-center justify-center mt-[70px] md:mt-[170px] mb-[40px]">
             <img className="w-[18px]" src={Copyright} alt="" />
             <p className="font-[300] text-[0.9rem] text-gray-400">
               Joshua || web dev. All right reserved

@@ -12,6 +12,7 @@
 body {
   background-color: black;
   color: white;
+  overflow-x: hidden;
 }
 
 .close:hover {
@@ -45,7 +46,7 @@ body {
   background-position: center;
   background-size: cover;
   height: 650px;
-  width: 100vw;
+  width: 95vw;
   margin-top: 60px;
 }
 
@@ -317,4 +318,109 @@ body {
 }
 .car-detail.wheel2 {
   left: 82px;
+}
+
+.navline {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  animation: navline 0.4s ease-in;
+  display: none;
+  border-radius: 10px;
+}
+
+.navlink:hover .navline {
+  display: block;
+}
+.navline2 {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  animation: navline2 0.4s ease-in;
+  display: none;
+  border-radius: 10px;
+}
+
+.navlink:hover .navline2 {
+  display: block;
+}
+
+@keyframes navline {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 5px;
+  }
+  20% {
+    width: 10px;
+  }
+  30% {
+    width: 15px;
+  }
+  50% {
+    width: 20px;
+  }
+  40% {
+    width: 25px;
+  }
+  50% {
+    width: 30px;
+  }
+  60% {
+    width: 35px;
+  }
+  70% {
+    width: 40px;
+  }
+  80% {
+    width: 41px;
+  }
+  90% {
+    width: 43px;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes navline2 {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 5px;
+  }
+  20% {
+    width: 10px;
+  }
+  30% {
+    width: 15px;
+  }
+  50% {
+    width: 20px;
+  }
+  40% {
+    width: 25px;
+  }
+  50% {
+    width: 30px;
+  }
+  60% {
+    width: 35px;
+  }
+  70% {
+    width: 40px;
+  }
+  80% {
+    width: 45px;
+  }
+  90% {
+    width: 55px;
+  }
+  100% {
+    width: 100%;
+  }
 }

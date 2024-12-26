@@ -40,7 +40,7 @@ const Slider1 = () => {
   }, []);
 
   return (
-    <div className=" w-full flex gap-[30px] p-[20px] scrollbar-hide overflow-x-scroll overflow-y-hidden rounded-[20px]">
+    <div className=" w-full sm:w-[80vw] flex gap-[30px] sm:mx-auto p-[20px] scrollbar-hide overflow-x-scroll overflow-y-hidden rounded-[20px]">
       <div className="relative overflow-hidden shrink-0 card h-[400px] w-[280px] rounded-[20px] p-[30px]">
         <div className="flex flex-col gap-[0px]">
           <p className="font-[500] text-[1.7rem] mb-0">Porsche</p>
