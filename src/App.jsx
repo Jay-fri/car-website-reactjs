@@ -234,7 +234,7 @@ function App() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-[45px] ">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[45px] md:grid-cols-2 md:pt-[20px] ">
               <div className="relative shrink-0 card h-[350px] w-[280px] rounded-[20px] p-[40px]">
                 <div className="flex flex-col gap-[0px]">
                   <p className="font-[500] text-[1.7rem] mb-0">Tesla</p>
@@ -348,12 +348,12 @@ function App() {
             </div>
           </div>
 
-          <div className="offer md:flex md:h-[500px] md:mx-auto md:gap-[60px] md:items-center md:justify-center relative p-[30px]">
+          <div className="offer md:flex md:h-[500px] md:mx-auto md:gap-[5px] lg:gap-[60px] md:items-center md:justify-center relative p-[30px]">
             <div className="flex flex-col gap-[30px] w-full text-center md:text-start md:items-start md:w-fit items-center justify-center">
               <p className="font-[500] text-[1.8rem] md:w-[300px] mt-[20px] md:text-[1.6rem]">
                 Do You Want To Receive Special Offers?
               </p>
-              <p className="font-[300] text-[1.2rem] md:w-[400px] md:text-[0.9rem]">
+              <p className="font-[300] text-[1.2rem] md:w-[350px] lg:w-[400px] md:text-[0.9rem]">
                 Be the first to receive all the information about our products
                 and new cars by email by subscribing to our mailing list.
               </p>
